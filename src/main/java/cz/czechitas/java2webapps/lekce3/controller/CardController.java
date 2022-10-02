@@ -18,7 +18,11 @@ public class CardController {
   public ModelAndView karticka() {
     ModelAndView result = new ModelAndView("card");
 
-    result.addObject("person", new Person("Eliška", "Krásnohorská", LocalDate.of(1947, 11, 18)));
+    result.addObject("person", new Person(
+            "Eliška", "Krásnohorská",
+            LocalDate.of(1947, 11, 18),
+            "https://thispersondoesnotexist.com/image"
+    ));
     result.addObject("address", new Address("Husova 234/8", "Praha", "11000"));
     return result;
   }

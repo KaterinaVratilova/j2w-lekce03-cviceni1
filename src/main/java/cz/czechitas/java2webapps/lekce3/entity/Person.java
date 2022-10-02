@@ -10,15 +10,18 @@ import java.util.Objects;
 public class Person {
   private String givenName;
   private String surname;
+
+  private String photoURL;
   private LocalDate birthDate;
 
   public Person() {
   }
 
-  public Person(String givenName, String surname, LocalDate birthDate) {
+  public Person(String givenName, String surname, LocalDate birthDate, String photoURL) {
     this.givenName = givenName;
     this.surname = surname;
     this.birthDate = birthDate;
+    this.photoURL = photoURL;
   }
 
   public String getGivenName() {
@@ -50,6 +53,14 @@ public class Person {
 
     Period period = birthDate.until(LocalDate.now());
     return period.getYears();
+  }
+
+  public String getPhotoURL() {
+    return photoURL;
+  }
+
+  public void setPhotoURL(String photoURL) {
+    this.photoURL = photoURL;
   }
 
   @Override
